@@ -47,5 +47,10 @@ ysqlsh -h 127.0.0.0  -U yugabyte -d yugabyte
 
 ![Dbeaver](https://github.com/user-attachments/assets/f4490a84-13e1-43a3-a323-fad56050726e)
 
+### Monitor Cluster : 
+
+Saat memulai cluster menggunakan yugabyted, Kita dapat memantau cluster menggunakan UI YugabyteDB, tersedia di http://127.0.0.1:15433
+
+![Monitor-Cluster](https://github.com/user-attachments/assets/31a3d2aa-d86a-4d58-8975-a91d085e9fc6)
 
 
