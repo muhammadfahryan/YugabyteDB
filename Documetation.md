@@ -33,31 +33,31 @@ Partitioned Tables di PostgreSQL:
 Ketersediaan Berkelanjutan (Continuous Availability):
 
     PostgreSQL:
-        Replikasi asynchronous umum digunakan.
-        Leader-follower setup: follower menerima data yang di-commit dari master.
-        Kelemahan: kehilangan ketersediaan saat failover manual, dan data yang baru di-commit nggak bisa diakses jika master gagal.
+       - Replikasi asynchronous umum digunakan.
+       - Leader-follower setup: follower menerima data yang di-commit dari master.
+       - Kelemahan: kehilangan ketersediaan saat failover manual, dan data yang baru di-commit nggak bisa diakses jika master gagal.
     YugabyteDB:
-        Dirancang untuk high availability.
-        Menggunakan Raft replication protocol untuk auto-failover dan self-healing.
-        Nggak ada "leader" utama; shard leader tersebar di beberapa node.
+       - Dirancang untuk high availability.
+       - Menggunakan Raft replication protocol untuk auto-failover dan self-healing.
+       - Nggak ada "leader" utama; shard leader tersebar di beberapa node.
 
 Replikasi dan Konsistensi:
 
     PostgreSQL:
-        Replikasi synchronous tersedia tapi jarang digunakan karena risiko kehilangan ketersediaan.
-        Nggak bisa menjamin always-on, strongly-consistent reads.
+       - Replikasi synchronous tersedia tapi jarang digunakan karena risiko kehilangan ketersediaan.
+       - Nggak bisa menjamin always-on, strongly-consistent reads.
     YugabyteDB:
-        Menggunakan leader-leases untuk menghindari serving data yang basi.
-        Menyajikan strongly consistent reads langsung dari shard leader tanpa quorum.
+       - Menggunakan leader-leases untuk menghindari serving data yang basi.
+       - Menyajikan strongly consistent reads langsung dari shard leader tanpa quorum.
 
 Transaksi ACID Terdistribusi:
 
     PostgreSQL:
-        Database single-shard, hanya mendukung transaksi single row dan single shard.
-        Transaksi multi-shard nggak berlaku.
+       - Database single-shard, hanya mendukung transaksi single row dan single shard.
+       - Transaksi multi-shard nggak berlaku.
     YugabyteDB:
-        Mendukung transaksi single row/shard dan multi-shard.
-        Terinspirasi dari Google Spanner untuk distributed ACID transactions dengan performa tinggi.
+       - Mendukung transaksi single row/shard dan multi-shard.
+       - Terinspirasi dari Google Spanner untuk distributed ACID transactions dengan performa tinggi.
         
 [Document Yuga Byte](https://docs.yugabyte.com/preview/faq/comparisons/postgresql/)
 
