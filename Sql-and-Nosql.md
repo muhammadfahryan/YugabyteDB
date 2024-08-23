@@ -1,3 +1,5 @@
+# Kegunaan Cassandra di YugabyteDB
+
 YugabyteDB adalah database distribusi yang mendukung dua model data utama: SQL dan NoSQL. Untuk NoSQL, YugabyteDB memiliki dukungan untuk API Cassandra, yang memungkinkan menggunakan YugabyteDB sebagai pengganti Apache Cassandra dalam aplikasi.
 
 Berikut adalah beberapa kegunaan utama dan keuntungan dari dukungan Cassandra di YugabyteDB:
