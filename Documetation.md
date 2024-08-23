@@ -58,6 +58,33 @@ Transaksi ACID Terdistribusi:
     YugabyteDB:
        - Mendukung transaksi single row/shard dan multi-shard.
        - Terinspirasi dari Google Spanner untuk distributed ACID transactions dengan performa tinggi.
+
+## Apa itu ACID ?
+
+- Merupakan compliance(kepatuhan) untuk sistem basis data yang memiliki karakter Atomicity, Consistency, Isolation, Durability
+- Sekumpulan Properti transaksi basis data yang dimaksudkan menjamin validitas data meskipun ada kesalahan atau error lainnya.
+
+### Atomicity
+- setiap statement transaksi diperlukan sebagai kesatuan
+- jika transaksi berhasil, maka seluruh statement harus berhasil begitu juga sebaliknya
+- properti ini untuk mencegah terjadinya kehilangan atau kerusakan data, misal jika ditengah transaksi terjadi kegagalan transaksi
+
+### Consistency
+
+- Memastikan transaksi hanya bisa mengubah data dari satu kondisi konsisten ke kondisi konsisten lainnya
+- setiap data yang ditulis di database harus valid sesuai dengan aturan yang ditetapkan
+- Hal ini mencegah data data yang menjadi tidak konsisten, menjamin integritas relasi antar data
+- misal buat tabel buat constraint atau unique semua harus konsisten
+
+### Isolation
+
+- Transaksi sering dieksekusi secara bersamaan (misal beberapa transaksi read and write ke tabel dalam waktu yang sama
+- Isolasi memastikan bahwa eksekusi secara bersamaan meninggalkan database dalam keadaan yang sama yang akan diperoleh jika transaksi dieksekusi secara berurutan(misal., ada satu data yang diakses sama 100 orang seharusnya walaupun secara bersamaan database nya memproses satu2 untuk data yang sama tersebut agar tidak terjadi crash condition)
+- tujuan utama adalah kontrol konkuresi(beberapa proses langsung berjalan), terpisah antar transaksi
+
+### Durability
+
+- Menjamin bahwa sekali transaksi telah disimpan, itu akan tetap disimpan bahkan dalam kasus kegagalan sistem (misal, crash atau matilampu)
         
 [Document Yuga Byte](https://docs.yugabyte.com/preview/faq/comparisons/postgresql/)
 
