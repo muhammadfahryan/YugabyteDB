@@ -85,6 +85,14 @@ Transaksi ACID Terdistribusi:
 ### Durability
 
 - Menjamin bahwa sekali transaksi telah disimpan, itu akan tetap disimpan bahkan dalam kasus kegagalan sistem (misal, crash atau matilampu)
+
+
+Jadi, saat  menjalankan START TRANSACTION, memulai sesi transaksi yang akan mencakup semua operasi database yang  dilakukan sampai dengan COMMIT atau membatalkannya dengan ROLLBACK. Selama transaksi ini aktif:
+
+    Atomicity: Semua operasi dalam transaksi akan berhasil atau semuanya gagal. Jika salah satu operasi gagal, semua perubahan dapat dibatalkan.
+    Consistency: Transaksi akan mengubah database dari satu keadaan yang konsisten ke keadaan konsisten lainnya.
+    Isolation: Operasi dalam transaksi tidak akan terlihat oleh transaksi lain hingga transaksi tersebut selesai.
+    Durability: Setelah transaksi dikomit, perubahan yang dilakukan akan permanen, meskipun terjadi kegagalan sistem.
         
 [Document Yuga Byte](https://docs.yugabyte.com/preview/faq/comparisons/postgresql/)
 
